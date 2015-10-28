@@ -38,24 +38,65 @@
     <!-- build:css /static/css/minified.css -->
     <link rel="stylesheet" href="/static/css/app.css"/>
     <link rel="stylesheet" href="/static/css/wysiwyg_figures.css"/>
+    <link rel="stylesheet" href="/static/css/main.css"/>
+    <link rel="stylesheet" href="/static/css/chocolat.css"/>
+    <link rel="stylesheet" href="/static/css/hamburgler.css"/>
     <!-- endbuild -->
+
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
     {# Useful block for loading outside scripts in other pages. #}
     {% block head_extra %}{% endblock %}
+
+  <script src="/static/javascript/main.js"></script>
+  <script src="/static/javascript/lazysizes.min.js" async=""></script>
+  <script src="/static/javascript/fastclick.js" ></script>
+
+
   </head>
-  <body>
+
+    <body {% if page_class %}class="{{ page_class }}"{% endif %}>
     {% block body %}
+
+    <div class="mobilenav">
+  <li><a href="#">Never</a></li>
+  <li><a href="#">Gonna</a></li>
+  <li><a href="#">Give</a></li>
+  <li><a href="#">You</a></li>
+  <li><a href="#">Up</a></li>
+</div>
+
+<a href="javascript:void(0)" class="icon">
+  <div class="hamburger">
+  <div class="menui top-menu"></div>
+  <div class="menui mid-menu"></div>
+  <div class="menui bottom-menu"></div>
+  </div>
+</a>
+
       <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
       <![endif]-->
 
       {% include "templates/partials/header.html" %}
 
-      {# By default, your inner pages will load into this block. #}
+
+
+      <div id ="right-container">
+
+        <a href="#" class="icon">
+            <div class="hamburger">
+            <div class="menui top-menu"></div>
+            <div class="menui mid-menu"></div>
+            <div class="menui bottom-menu"></div>
+            </div>
+          </a>
+
       {% block content %}{% endblock %}
 
-      {% include "templates/partials/footer.html" %}
 
+      {% include "templates/partials/footer.html" %}
+</div>
       {# Foundation JS #}
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -64,18 +105,77 @@
 
       <!-- build:js /static/javascript/minified.js -->
         <script src="/static/javascript/bootstrap/bootstrap.js"></script>
+        <script src="/static/javascript/jquery.chocolat.min.js"></script>
       <!-- endbuild -->
-
       {% block scripts_extra %}{% endblock %}
 
-      {# Google Analytics code. Feel free to remove. #}
-      <script>
-        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src='//www.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-      </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+
+    <script src="/static/javascript/imagesloaded.pkgd.min.js"></script>
+
+    <script src="/static/javascript/hamburgler.js"></script>
+
+
+
+
+<script>
+$(window).load(function() {
+$(".grid-item").each(function(){
+  var imageUrl = $(this).css("background-image");
+  imageUrl = imageUrl.split("url")[1];
+  imageUrl = imageUrl.substring(1,imageUrl.length-1);
+  var image = new Image();
+  image.src = imageUrl;
+  var width = image.width;
+  var height = image.height;
+  if(width >= height)
+     $(this).addClass("grid-item--landscape");
+  else
+     $(this).addClass("grid-item--portrait");
+});
+
+setTimeout(function(){
+    var $grid = $('.grid').masonry({
+        itemSelector: '.grid-item',
+        columnWidth: 0,
+    });
+
+    $grid.imagesLoaded().progress(function () {
+        $grid.masonry();
+    });
+},100);
+});
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+    $('.chocolat-parent').Chocolat();
+});
+</script>
+
+<script>
+$(".nav-trigger").click(function () {
+  $(".main-nav").fadeToggle(500);
+  $(".top-menu").toggleClass("top-animate");
+  $(".mid-menu").toggleClass("mid-animate");
+  $(".bottom-menu").toggleClass("bottom-animate");
+});
+
+</script>
+<script>
+$(function() {
+    FastClick.attach(document.body);
+});
+</script>
+
+</script>
+
     {% endblock %}
+
+
+
   </body>
 </html>
-

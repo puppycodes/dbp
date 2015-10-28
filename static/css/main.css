@@ -1,4 +1,365 @@
-body {
-  padding: 40px;
-  max-width: 1000px;
+html {
+  overflow-y: scroll;
 }
+
+
+body {
+color:#000;
+}
+
+
+/* containers */
+
+#left-container
+{
+  position: fixed;
+  float: left;
+  padding-top: 50px;
+  padding-left: 50px;
+  background-color:white;
+  z-index: 99999;
+}
+
+#right-container
+{
+  float: right;
+  width: 70%;
+  padding-top: 50px;
+}
+
+/* ---- menu ---- */
+
+
+.logo
+{
+padding-bottom: 15px;
+}
+
+.logo a
+{
+  font-family: 'lato';
+  font: 14.5px/18px 'lato',Times,serif;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-weight: bold;
+  color: black;
+}
+
+.logo a:hover
+{
+text-decoration: none;
+color:#ddd;
+}
+
+.menu {
+  display: block;
+  opacity: 1;
+  margin-top: 10%;
+}
+
+.menu ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+.menu li
+{
+      margin-bottom: 15px;
+}
+
+.menu ul li a
+{
+  color:black;
+  font: 10.75px/13px Lato,"Helvetica",Times,serif;
+letter-spacing: .5px;
+line-height: 1.5;
+}
+
+.menu ul li a:hover
+{
+  color:#ddd;
+  text-decoration: none;
+}
+
+
+/* ---- mobile nav ----  */
+
+.noscroll {
+overflow-y: hidden;
+}
+
+/* ---- grid ---- */
+
+.grid {
+
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  float: left;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.grid-item--height2 {
+  width: 400px;
+  height: 600px; }
+
+
+  .lazyload,
+  .lazyloading {
+      opacity: 0;
+  }
+  .lazyloaded {
+      opacity: 1;
+      transition: opacity 300ms;
+  }
+
+
+/* chocolat slider */
+.chocolat-image {
+width: 100%;
+height: 100%;
+display: block;
+}
+
+/* ---- list grid ---- */
+
+.list-grid {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.list-grid ul li {
+  list-style-type: none;
+}
+
+
+.grid-item--portrait { height: 400px; }
+
+.caption
+{
+  clear: left;
+  display: block;
+  text-align: left;
+}
+
+.list-grid-item {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* ---- footer ---- */
+
+.footer {
+  clear:both;
+  padding-top: 15px;
+  padding-left: 15px;
+  display: none;
+}
+
+
+
+/* ---- front page ---- */
+
+.front-image img {
+
+margin: auto;
+display: block;
+
+}
+
+
+/* RESPONSIVE */
+
+
+   /* Custom, iPhone Retina */
+   @media only screen and (min-width : 320px) {
+
+     #left-container
+     {
+       width: 100%;
+       padding-top: 15px;
+     }
+
+     #right-container
+     {
+       float: right;
+       width: 100%;
+       padding-top: 50px;
+     }
+
+
+     .menu {
+       display: none;
+     }
+
+     .logo {
+    margin-bottom: 0;
+    }
+
+   }
+
+   /* Extra Small Devices, Phones */
+   @media only screen and (min-width : 480px) {
+
+     #left-container
+     {
+       width: 100%;
+       padding-top: 15px;
+     }
+
+
+     #right-container
+     {
+       float: right;
+       width: 100%;
+       padding-top: 50px;
+       position: relative;
+     }
+
+     .menu
+     {
+       display: none;
+
+     }
+
+     .logo {
+    margin-bottom: 0;
+    }
+
+   }
+
+   /* Small Devices, Tablets */
+   @media only screen and (min-width : 768px) {
+
+     #left-container
+     {
+       width: auto;
+       padding-top: 15px;
+     }
+
+
+     #right-container
+     {
+       float: right;
+       width: 70%;
+       padding-top: 50px;
+       position: relative;
+     }
+
+     .index #right-container {
+         width: 70% !important;
+       }
+
+     .menu
+     {
+       display: block;
+
+     }
+
+     .logo {
+    margin-bottom: 0;
+    }
+
+    .icon
+    {
+      display: none !important;
+    }
+
+   }
+
+
+
+
+
+
+   /* Medium Devices, Desktops */
+   @media only screen and (min-width : 992px) {
+
+     #right-container
+     {
+       float: right;
+       width: 80%;
+       padding-top: 50px;
+       position: relative;
+     }
+
+     .index #right-container
+       {
+         width: 700px !important;
+         position: absolute;
+         left: 280px;
+       }
+
+
+     .menu
+     {
+       display: block;
+       opacity: 1;
+       transition: opacity .25s ease-in-out;
+       -moz-transition: opacity .25s ease-in-out;
+       -webkit-transition: opacity .25s ease-in-out;
+     }
+
+     .logo {
+    margin-bottom: 0;
+    }
+
+    .icon
+    {
+      display: none !important;
+    }
+
+
+   }
+
+   /* Large Devices, Wide Screens */
+   @media only screen and (min-width : 1200px) {
+
+
+     #right-container
+     {
+       float: right;
+       width: 80%;
+       padding-top: 50px;
+       position: relative;
+     }
+
+    .index #right-container {
+      width: 700px !important;
+      position: absolute;
+      left: 280px;
+       }
+
+     .menu
+     {
+       display: block;
+       opacity: 1;
+       transition: opacity .25s ease-in-out;
+       -moz-transition: opacity .25s ease-in-out;
+       -webkit-transition: opacity .25s ease-in-out;
+     }
+
+     .logo {
+    margin-bottom: 0;
+    }
+
+    .icon
+    {
+      display: none !important;
+    }
+
+   }

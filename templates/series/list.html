@@ -1,0 +1,22 @@
+{% extends "templates/partials/base.html" %}
+
+{# This sets our page <title>. It will append series to the site title defined in base.html #}
+{% block title %}{% parent %} - series{% endblock %}
+
+{% set page_class = 'series' %}
+
+{% block content %}
+  {% set data = cms.series %}
+
+
+  <div class="list-grid">
+      {% for object in data %}
+        <div class="list-grid-item col-xs-12 col-sm-5 col-md-3 col-lg-3">
+          <a href="{{ url(object) }}"><img class="img-responsive" src="{{ object.cover_image|imageCrop(800, 800) }}" alt="{{ object.name }}"/></a>
+          <span class="caption">{{ object.name }}</span>
+        </div>
+      {% endfor %}
+
+  </div>
+
+{% endblock %}

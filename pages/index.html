@@ -1,17 +1,6 @@
-{# ------------------------------------------------------- #}
 
-{# YOUR HOMEPAGE #}
+{% set page_class = 'index' %}
 
-{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
-{# http://paularmstrong.github.io/swig/docs/tags/ #}
-
-{# Learn about calling data into Webhook pages here: #}
-{# http://www.webhook.com/docs/template-rules-and-filters/ #}
-
-{# ------------------------------------------------------- #}
-
-{# Confused what extends and blocks do? Watch a primer: #}
-{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
 
 {# This sets our page <title>. It will append "- Homepage" to the site title defined in base. #}
@@ -19,49 +8,11 @@
 
 {% block content %}
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
 
-        <h1>Hello <a href="http://getbootstrap.com/">Boostrap</a>!</h1>
 
-        <p>
-          This theme installed Bootstrap's 3.3.1 source LESS and Javascript files.
-          It also set up some <a href="http://gruntjs.com">Grunt</a> watch commands to build CSS from the <code>less</code> folder as you build.
-          You'll need to <strong>restart your local server</strong> to get it to operate properly.
-        </p>
+<div class="front-image">
+  <img class="img-responsive" src="{{ cms.homepage.image|imageSize(800) }}" />
+</div>
 
-        <h3>If you need to update boostrap.</h3>
-
-        <ol>
-          <li>Open your terminal and navigate to this site's directory</li>
-          <li>Run <code>npm install -g bower</code></li>
-          <li>Run <code>bower update</code></li>
-          <li>Run <code>grunt copy</code></li>
-        </ol>
-
-        <hr/>
-
-        <p>This is your homepage, located at /pages/index.html.</p>
-
-        <p><a href="/cms/" class="btn btn-primary">Looking for the CMS?</a></p>
-
-        {# If you have at least content page type, we show a list. #}
-        {% if cms_types|size !== 0 %}
-
-          <h3>Content types you've created in the CMS so far.</h3>
-
-          <ul>
-          {% for type in cms_types %}
-            <li><a href="{{ url(type) }}">{{ type.name }}</a></li>
-          {% endfor %}
-          </ul>
-
-        {% endif %}
-
-      </div>
-    </div>
-  </div>
 
 {% endblock %}
-
