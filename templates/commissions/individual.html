@@ -12,47 +12,16 @@
 {# This sets our page <title>. It will append this commissions's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-  <p><a href="{{ url('commissions') }}">View a list of all commissions</a></p>
-  <h1>{{ item.name }}</h1>
-  <ul>
-      <li>
-        <strong>Name: </strong>
-        {{ item.name }}
-      </li>
-      <li>
-        <strong>Create Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.create_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Last Updated: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.last_updated|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Publish Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.publish_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Cover Image: </strong>
-        {# You can pull out a lot more information from the image property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <img src="{{ item.cover_image|imageSize(200, 200) }}" />
-      </li>
-      <li>
-        <strong>Gallery: </strong>
-        {# You can pull out a lot more information from the gallery property. Info here: #}
-        {# http://www.webhook.com/docs/widget-template-reference/#image #}
-        <ul>
+<div class="grid">
+    <div class="chocolat-parent" data-chocolat-title="{{item.name}}">
           {% for image in item.gallery %}
-            <li>
-              {# You can get the raw image url by accessing image.url #}
-              <img src="{{ image|imageSize(200, 200) }}">
-              <div>{{ image.caption }}</div>
-            </li>
-          {% endfor %}
-        </ul>
-      </li>
-  </ul>
+          <div style="background-image:url('{{ image|imageSize(800) }}'); background-size:cover;" class="grid-item lazyload lazypreload img-responsive" data-expand="-110">
+                <a class="chocolat-image" href="{{ image|imageSize(800) }}" title="{{ image.caption }}" >
+                <!--  <img width="100" src="{{ image|imageSize(800) }}" /> -->
+                </a>
+            </div>
+
+            {% endfor %}
+            </div>
+</div>
 {% endblock %}

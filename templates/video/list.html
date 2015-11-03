@@ -19,26 +19,18 @@
 
 {% block content %}
 
-  {# The first thing we do is call video data from the CMS. #}
   {% set data = cms.video %}
-
-  {# Next we sort the data by publish_date. The true bit reverses it so it's newest first. Learn more: #}
-  {# http://www.webhook.com/docs/template-rules-and-filters/#sortproperty_reverseorder #}
   {% set data = data|sort('publish_date', true) %}
-
-  {# This is how you set pagination. It's always important to do this after your sort. #}
   {% set data = paginate(data, 5) %}
-
-  <h1>List of video</h1>
-
-  {# This forloop can use any data from http:localhost:2000/cms/#/form/video/ #}
-  <ul>
+  <div class="list-grid">
     {% for object in data %}
-      <li><a href="{{ url(object) }}">{{ object.name }}</a></li>
+      <div class="list-grid-item col-xs-12 col-sm-5 col-md-4 col-lg-4">
+          <a href="{{ url(object) }}"><img class="img-responsive" src="{{ object.cover_image|imageCrop(800, 800) }}" alt="{{ object.name }}"/></a>
+          <span class="caption">{{ object.name }}</span>
+        </div>
     {% endfor %}
-  </ul>
+  </div>
 
-  {# The actual pagination template, feel free to edit or replace the default one. #}
   {% include "templates/partials/paginator.html" %}
 
 {% endblock %}

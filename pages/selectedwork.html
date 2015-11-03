@@ -17,7 +17,7 @@
   <div class="grid">
       <div class="chocolat-parent" data-chocolat-title="">
           {% for image in cms.selectedwork.gallery %}
-          <div style="background-image:url('{{ image|imageSize(800) }}'); background-size:cover;" class="grid-item lazyload lazypreload" data-expand="-110">
+          <div style="background-image:url('{{ image|imageSize(800) }}'); background-size:cover;" class="grid-item lazyload lazypreload img-responsive" data-expand="-110">
                 <a class="chocolat-image" href="{{ image|imageSize(800) }}" title="">
                 <!--  <img width="100" src="{{ image|imageSize(800) }}" /> -->
                 </a>

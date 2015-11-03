@@ -12,36 +12,14 @@
 {# This sets our page <title>. It will append this news's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-  <p><a href="{{ url('news') }}">View a list of all news</a></p>
-  <h1>{{ item.name }}</h1>
-  <ul>
-      <li>
-        <strong>Name: </strong>
-        {{ item.name }}
-      </li>
-      <li>
-        <strong>Create Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.create_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Last Updated: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.last_updated|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Publish Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.publish_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Date time: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ item.date_time|date('F d Y') }}
-      </li>
-      <li>
-        <strong>WYSIWYG text: </strong>
-        {{ item.wysiwyg_text|safe }}
-      </li>
-  </ul>
+
+<div class="post">
+<div class="post-title">{{ item.name }}</div>
+<span class="publish-date">{{ item.publish_date|date('F d Y') }}</span>
+
+
+  <div class="news-full-post">  {{ item.post|safe }} </div>
+
+
+
 {% endblock %}
