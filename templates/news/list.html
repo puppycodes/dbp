@@ -22,9 +22,21 @@
   {% set data = cms.news %}
   {% set data = data|sort('publish_date', true) %}
   {% set data = paginate(data, 20) %}
-
-
+  <script type="text/javascript">
+    var feed = new Instafeed({
+      get: 'user',
+      clientId: '8dbfb9095da94ce7901583032a3b02e1',
+      accessToken: 'e891300fe5dd4ae8bcb022f5256cfd08',
+      userId: 283723044,
+      filter: function(image) {
+        return image.tags.indexOf('TAG_NAME') >= 0;
+      }
+    });
+    feed.run();
+  </script>
     {% for object in data %}
+<div class="news-container">
+<div id="instafeed"></div>
 <div class="post">
   <a class="post-title" href="{{ url(object) }}">{{ object.name }} </a>
   <span class="publish-date">{{ object.publish_date|date('F d Y'); }}</span>
