@@ -12,7 +12,7 @@
 {# This sets our page <title>. It will append this news's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
-
+<div class="news-container">
 <div class="post">
 <div class="post-title">{{ item.name }}</div>
 <span class="publish-date">{{ item.publish_date|date('F d Y') }}</span>
@@ -21,5 +21,5 @@
   <div class="news-full-post">  {{ item.post|safe }} </div>
 
 
-
+</div>
 {% endblock %}

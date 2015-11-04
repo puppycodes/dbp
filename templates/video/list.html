@@ -21,7 +21,7 @@
 
   {% set data = cms.video %}
   {% set data = data|sort('publish_date', true) %}
-  {% set data = paginate(data, 5) %}
+
   <div class="list-grid">
     {% for object in data %}
       <div class="list-grid-item col-xs-12 col-sm-5 col-md-4 col-lg-4">
@@ -31,6 +31,6 @@
     {% endfor %}
   </div>
 
-  {% include "templates/partials/paginator.html" %}
+
 
 {% endblock %}
