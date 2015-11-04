@@ -147,7 +147,7 @@ opacity: .9 !important;
 }
 
 .chocolat-bottom {
-  border-top: 1px solid black;
+
 }
 
 .chocolat-wrapper .chocolat-bottom {
@@ -309,14 +309,40 @@ max-width: 600px;
 }
 
 
-
-
-
 figcaption {
     text-align: center;
     line-height: 24px;
     font-size: 10px;
 }
+
+
+.insta-title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  display: block;
+}
+
+.insta-title:hover {
+  text-decoration: none;
+  color: black;
+}
+
+#instafeed {
+
+}
+
+#instafeed img {
+  height:auto;
+  max-width: 100px;
+  margin-bottom: 20px;
+  display:inline-block;
+
+}
+
+#instafeed a {
+
+}
+
 
 
 /* ---- Video Page ---- */
