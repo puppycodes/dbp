@@ -131,6 +131,10 @@ overflow-y: hidden;
     transition: opacity 300ms;
 }
 
+.image-item {
+  width: 100%;
+}
+
 @media only screen and (min-width: 320px) {}
 
 @media only screen and (min-width: 480px) {
