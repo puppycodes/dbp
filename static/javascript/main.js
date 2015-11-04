@@ -27,7 +27,6 @@ $(function () {
   //   });
   // }, 100);
 
-  // $('.chocolat-parent').Chocolat();
 
   var $grid = $('.grid').imagesLoaded({
     background: true
@@ -40,6 +39,23 @@ $(function () {
   });
 
 
+  var choco = $('.chocolat-parent').Chocolat().data('chocolat');
+  var chocoEnabled = true;
+
+  $(window).resize(function (event) {
+    if (window.innerWidth <= 480) {
+      choco.api().destroy();
+      $('.chocolat-image').on('click', function (event) {
+        event.preventDefault();
+        return false;
+      });
+      chocoEnabled = false;
+    } else if (!chocoEnabled) {
+      chocoEnabled = true;
+      $('.chocolat-image').off('click');
+      choco = $('.chocolat-parent').Chocolat().data('chocolat');
+    }
+  });
 
   $(".nav-trigger").click(function () {
     $(".main-nav").fadeToggle(500);
