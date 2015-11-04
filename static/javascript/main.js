@@ -39,22 +39,36 @@ $(function () {
   });
 
 
-  var choco = $('.chocolat-parent').Chocolat().data('chocolat');
-  var chocoEnabled = true;
+  var choco = null;
+  var chocoEnabled = null;
 
-  $(window).resize(function (event) {
+  function chocoTime () {
     if (window.innerWidth <= 480) {
-      choco.api().destroy();
       $('.chocolat-image').on('click', function (event) {
         event.preventDefault();
         return false;
       });
-      chocoEnabled = false;
-    } else if (!chocoEnabled) {
-      chocoEnabled = true;
+
+      if (chocoEnabled) {
+        choco.api().destroy();
+        chocoEnabled = false;
+      }
+    } else if (chocoEnabled === false) {
       $('.chocolat-image').off('click');
       choco = $('.chocolat-parent').Chocolat().data('chocolat');
+      chocoEnabled = true;
     }
+
+    if (window.innerWidth > 480 && choco === null) {
+      choco = $('.chocolat-parent').Chocolat().data('chocolat');
+      chocoEnabled = true;
+    }
+  }
+
+  chocoTime();
+
+  $(window).resize(function (event) {
+    chocoTime();
   });
 
   $(".nav-trigger").click(function () {
