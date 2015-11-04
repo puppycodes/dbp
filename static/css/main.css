@@ -95,13 +95,18 @@ line-height: 1.5;
 /* ---- mobile nav ----  */
 
 .noscroll {
-overflow-y: hidden;
+  overflow-y: hidden;
+  padding-right: 15px;
+}
+
+.noscroll .icon {
+  right: 30px;
 }
 
 /* ---- grid ---- */
 
 .grid {
-
+  width: 100%;
 }
 
 /* clear fix */
@@ -113,26 +118,57 @@ overflow-y: hidden;
 
 /* ---- .grid-item ---- */
 
+.grid-item,
+.grid-sizer {
+  width: 100%;
+}
+
 .grid-item {
-  float: left;
-  width: 400px;
-  height: 300px;
   overflow: hidden;
 }
 
-.grid-item--height2 {
-  width: 400px;
-  height: 600px; }
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    opacity: 1;
+    transition: opacity 300ms;
+}
 
+.image-item {
+  width: 100%;
+}
 
-  .lazyload,
-  .lazyloading {
-      opacity: 0;
+@media only screen and (min-width: 320px) {}
+
+@media only screen and (min-width: 480px) {
+  .grid-item,
+  .grid-sizer {
+    width: 50%;
   }
-  .lazyloaded {
-      opacity: 1;
-      transition: opacity 300ms;
+}
+
+@media screen and (min-width: 768px) {
+  .grid-item,
+  .grid-sizer {
+    width: 33.3333%;
   }
+}
+
+@media only screen and (min-width : 992px) {
+  .grid-item,
+  .grid-sizer {
+    width: 33.3333%;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .grid-item,
+  .grid-sizer {
+    width: 25%;
+  }
+}
 
 
 /* ----- chocolat slider ---- */
@@ -484,10 +520,6 @@ figure[data-type=video] {
        position: relative;
      }
 
-     .grid {
-       width: 800px;
-       margin: auto;
-     }
 
      .index #right-container {
          width: 70% !important;
@@ -597,12 +629,7 @@ figure[data-type=video] {
       width: 700px !important;
       position: absolute;
       left: 280px;
-       }
-
-       .grid {
-         width: 1200px;
-         margin: auto;
-       }
+     }
 
      .menu
      {

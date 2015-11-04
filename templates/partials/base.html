@@ -48,7 +48,6 @@
     {# Useful block for loading outside scripts in other pages. #}
     {% block head_extra %}{% endblock %}
 
-  <script src="/static/javascript/main.js"></script>
   <script src="/static/javascript/lazysizes.min.js" async=""></script>
   <script src="/static/javascript/fastclick.js" ></script>
   <script src="/static/javascript/instafeed.min.js" ></script>
@@ -112,74 +111,15 @@
       {% block scripts_extra %}{% endblock %}
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+    <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
 
     <script src="/static/javascript/imagesloaded.pkgd.min.js"></script>
 
     <script src="/static/javascript/hamburgler.js"></script>
 
+    <script src="/static/javascript/main.js"></script>
 
-
-
-<script>
-$(window).load(function() {
-$(".grid-item").each(function(){
-  var imageUrl = $(this).css("background-image");
-  imageUrl = imageUrl.split("url")[1];
-  imageUrl = imageUrl.substring(1,imageUrl.length-1);
-  var image = new Image();
-  image.src = imageUrl;
-  var width = image.width;
-  var height = image.height;
-  if(width >= height)
-     $(this).addClass("grid-item--landscape");
-  else
-     $(this).addClass("grid-item--portrait");
-});
-
-setTimeout(function(){
-    var $grid = $('.grid').masonry({
-        itemSelector: '.grid-item',
-        columnWidth: 0,
-    });
-
-    $grid.imagesLoaded().progress(function () {
-        $grid.masonry();
-    });
-},100);
-});
-</script>
-
-
-
-<script>
-$(document).ready(function(){
-    $('.chocolat-parent').Chocolat();
-});
-</script>
-
-<script>
-$(".nav-trigger").click(function () {
-  $(".main-nav").fadeToggle(500);
-  $(".top-menu").toggleClass("top-animate");
-  $(".mid-menu").toggleClass("mid-animate");
-  $(".bottom-menu").toggleClass("bottom-animate");
-});
-
-</script>
-<script>
-$(function() {
-    FastClick.attach(document.body);
-});
-</script>
-
-</script>
-
-    {% endblock %}
-
-  
-
-
-
+  {% endblock %}
   </body>
 </html>
