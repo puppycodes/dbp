@@ -95,7 +95,12 @@ line-height: 1.5;
 /* ---- mobile nav ----  */
 
 .noscroll {
-overflow-y: hidden;
+  overflow-y: hidden;
+  padding-right: 15px;
+}
+
+.noscroll .icon {
+  right: 30px;
 }
 
 /* ---- grid ---- */
