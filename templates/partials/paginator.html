@@ -2,7 +2,6 @@
 
 {% set curPage = getCurPage() %}
 {% set maxPage = getMaxPage() %}
-
 {% if maxPage > 1 %}
 
 <ul class="pagination">
@@ -35,7 +34,7 @@
   {% endif %}
 
   {% if curPage < maxPage - 3 %}
-    <li>...</li>
+    <li></li>
   {% endif %}
 
   <li><a href="{{ getPageUrl(maxPage) }}">{{maxPage}}</a></li>

@@ -114,6 +114,12 @@ line-height: 1.5;
   text-decoration: none;
 }
 
+/* ---- pagination ---- */
+
+.pagination .active {
+  color:grey !important;
+}
+
 
 /* ---- mobile nav ----  */
 
