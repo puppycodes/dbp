@@ -20,7 +20,7 @@
     {% for image in cms.selectedwork.gallery %}
     <div class="grid-sizer"></div>
     <div class="grid-item lazyload lazypreload img-responsive" data-expand="-110">
-      <a class="chocolat-image" href="{{ image|imageSize(800) }}" title="">
+      <a class="chocolat-image" href="{{ image|imageSize(800) }}" title="{{image.caption}}">
        <img class="image-item" src="{{ image|imageSize(800) }}" />
       </a>
     </div>

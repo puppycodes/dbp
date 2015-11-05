@@ -15,11 +15,27 @@ color:black;
 font-size: 12px;
 }
 
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+    color: black;
+    font-family: lato;
+}
+
+.pagination a {
+    color: black !important;
+    font-family: lato;
+    border-radius: 0px !important;
+}
+
 
 /* containers */
 
 #left-container
 {
+  background-color: white;
   position: fixed;
   float: left;
   padding-top: 50px;
@@ -393,7 +409,10 @@ figure[data-type=video] {
 .video-container
 {
   font-size: 8px;
+max-width: 600px;
+text-align: center;
 }
+
 
 
 
@@ -455,6 +474,12 @@ figure[data-type=video] {
     padding-right: 0px;
     }
 
+    .grid
+    {
+      pointer-events: none;
+    }
+
+
 
    }
 
@@ -467,6 +492,10 @@ figure[data-type=video] {
        padding-top: 15px;
      }
 
+     .grid
+     {
+       pointer-events: all;
+     }
 
      #right-container
      {
@@ -498,6 +527,8 @@ figure[data-type=video] {
     padding-left: 0;
     padding-right: 0px;
   }
+
+
 
 
    }
