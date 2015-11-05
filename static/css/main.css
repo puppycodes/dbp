@@ -80,6 +80,10 @@ color:#ddd;
   margin-top: 10%;
 }
 
+.menu .active {
+  color:grey;
+}
+
 .menu ul
 {
   list-style-type: none;
@@ -109,6 +113,10 @@ line-height: 1.5;
 
 
 /* ---- mobile nav ----  */
+
+.mobilenav .active {
+  color:grey;
+}
 
 .noscroll {
   overflow-y: hidden;

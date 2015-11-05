@@ -6,9 +6,8 @@
 {% if maxPage > 1 %}
 
 <ul class="pagination">
-
   {% if curPage > 1 %}
-  <li><a href="{{ getPageUrl(curPage - 1) }}">prev</a></li>
+  <li><a href="{{ getPageUrl(curPage - 1) }}" >prev</a></li>
   {% endif %}
 
   <li><a href="{{ getPageUrl(1) }}">1</a></li>

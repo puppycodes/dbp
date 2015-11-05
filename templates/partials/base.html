@@ -59,12 +59,12 @@
     {% block body %}
 
     <div class="mobilenav">
-  <li><a href="/selectedwork">Selected Work</a></li>
-  <li><a href="/series">Series</a></li>
-  <li><a href="/commissions">Commissions</a></li>
-  <li><a href="/video">Video</a></li>
-  <li><a href="/information">Information</a></li>
-  <li><a href="/news">News</a></li>
+      <li><a href="{{ url('selectedwork') }}" {% if getCurrentUrl() == url('selectedwork') %} class="active" {% endif %}>Selected Work</a></li>
+      <li><a href="{{ url('series') }}" {% if getCurrentUrl() == url('series') %} class="active" {% endif %}>Series</a></li>
+      <li><a href="{{ url('commissions') }}" {% if getCurrentUrl() == url('commissions') %} class="active" {% endif %}>Commissions</a></li>
+      <li><a href="{{ url('video') }}" {% if getCurrentUrl() == url('video') %} class="active" {% endif %}>Video</a></li>
+      <li><a href="{{ url('information') }}" {% if getCurrentUrl() == url('information') %} class="active" {% endif %}>Information</a></li>
+      <li><a href="{{ url('news') }}" {% if getCurrentUrl() == url('news') %} class="active" {% endif %}>News</a></li>
 </div>
 
 <a href="javascript:void(0)" class="icon">
