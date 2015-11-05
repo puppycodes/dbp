@@ -59,7 +59,7 @@ $(function () {
       chocoEnabled = true;
     }
 
-    if (window.innerWidth > 480 && choco === null) {
+    if (window.innerWidth > 768 && choco === null) {
       choco = $('.chocolat-parent').Chocolat().data('chocolat');
       chocoEnabled = true;
     }

@@ -33,10 +33,10 @@
   userFeed.run();
   </script>
 
-
+  <div class="news-container">
+  <a class="insta-title" href="http://instagram.com/davidablack"> Instagram </a>
     {% for object in data %}
-<div class="news-container">
-<a class="insta-title" href="http://instagram.com/davidablack"> Instagram </a>
+
 
 <div id="instafeed"></div>
 <div class="post">
@@ -45,7 +45,8 @@
   <a href="{{ url(object) }}"><img class="img-responsive" src="{{ object.cover_image|imageCrop(800, 800) }}"></a>
 </div>
     {% endfor %}
+      {% include "templates/partials/paginator.html" %}
 </div>
-  {% include "templates/partials/paginator.html" %}
+
 
 {% endblock %}
