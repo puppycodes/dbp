@@ -16,7 +16,7 @@
 
 {# This sets our page <title>. It will append commissions to the site title defined in base.html #}
 {% block title %}{% parent %} - commissions{% endblock %}
-
+{% set page_class = 'commissions' %}
 {% block content %}
 
   {# The first thing we do is call commissions data from the CMS. #}
@@ -31,7 +31,7 @@
       {% endfor %}
 
   </div>
-  
+
   {% include "templates/partials/paginator.html" %}
 
 {% endblock %}

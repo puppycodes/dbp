@@ -9,9 +9,13 @@
 {# Confused what extends and blocks do? Watch a primer: #}
 {# http://www.webhook.com/docs/template-inheritance-blocks/ #}
 {% extends "templates/partials/base.html" %}
+
 {# This sets our page <title>. It will append this series's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% set page_class = 'series' %}
+
 {% block content %}
+
 
 <div class="grid">
   <div class="chocolat-parent" data-chocolat-title="{{ item.name }}">

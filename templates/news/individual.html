@@ -11,6 +11,7 @@
 {% extends "templates/partials/base.html" %}
 {# This sets our page <title>. It will append this news's name to the site title defined in base.html #}
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% set page_class = 'news' %}
 {% block content %}
 <div class="news-container">
 <div class="post">

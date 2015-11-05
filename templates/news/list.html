@@ -17,6 +17,8 @@
 {# This sets our page <title>. It will append news to the site title defined in base.html #}
 {% block title %}{% parent %} - news{% endblock %}
 
+{% set page_class = 'news' %}
+
 {% block content %}
 
   {% set data = cms.news %}
