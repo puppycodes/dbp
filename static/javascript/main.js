@@ -43,7 +43,7 @@ $(function () {
   var chocoEnabled = null;
 
   function chocoTime () {
-    if (window.innerWidth <= 480) {
+    if (window.innerWidth <= 768) {
       $('.chocolat-image').on('click', function (event) {
         event.preventDefault();
         return false;

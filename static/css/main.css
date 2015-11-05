@@ -517,7 +517,7 @@ text-align: center;
 
 
     .information {
-      padding-left: 15px;
+    /*padding-left: 15px;*/
       padding-right: 15px;
     }
 
@@ -528,7 +528,10 @@ text-align: center;
     padding-right: 0px;
   }
 
-
+  .grid
+  {
+    pointer-events: none;
+  }
 
 
    }
@@ -589,6 +592,10 @@ text-align: center;
     padding-right: 15px;
     }
 
+    .grid
+    {
+      pointer-events: all;
+    }
 
 
    }
