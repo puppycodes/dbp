@@ -210,10 +210,19 @@ line-height: 1.5;
 @media only screen and (min-width : 1200px) {
   .grid-item,
   .grid-sizer {
+    width: 50%;
+    padding: 5px;
+  }
+}
+
+@media only screen and (min-width : 1400px) {
+  .grid-item,
+  .grid-sizer {
     width: 33.3333%;
     padding: 5px;
   }
 }
+
 
 
 /* ----- chocolat slider ---- */
