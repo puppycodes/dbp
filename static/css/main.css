@@ -173,33 +173,45 @@ line-height: 1.5;
   width: 100%;
 }
 
-@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 320px) {
+
+  .grid-item,
+  .grid-sizer {
+    width: 100%;
+    padding: 5px;
+  }
+
+}
 
 @media only screen and (min-width: 480px) {
   .grid-item,
   .grid-sizer {
     width: 50%;
+    padding: 5px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .grid-item,
   .grid-sizer {
-    width: 33.3333%;
+    width: 50%;
+    padding: 5px;
   }
 }
 
 @media only screen and (min-width : 992px) {
   .grid-item,
   .grid-sizer {
-    width: 33.3333%;
+    width: 50%;
+    padding: 5px;
   }
 }
 
 @media only screen and (min-width : 1200px) {
   .grid-item,
   .grid-sizer {
-    width: 25%;
+    width: 33.3333%;
+    padding: 5px;
   }
 }
 
