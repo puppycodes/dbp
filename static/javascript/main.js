@@ -28,6 +28,12 @@ $(function () {
   // }, 100);
 
 
+// click to forward //
+  var instance = $('.chocolat-parent').Chocolat().data('chocolat');
+    $('body').on('click', '.chocolat-img', function() { instance.api().next(); });
+
+// images loaded //
+
   var $grid = $('.grid').imagesLoaded({
     background: true
   }, function () {
