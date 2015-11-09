@@ -196,6 +196,7 @@ line-height: 1.5;
   .grid-sizer {
     width: 50%;
     padding: 5px;
+    max-width: 409px;
   }
 }
 
@@ -204,6 +205,7 @@ line-height: 1.5;
   .grid-sizer {
     width: 50%;
     padding: 5px;
+    max-width: 409px;
   }
 }
 
@@ -212,6 +214,7 @@ line-height: 1.5;
   .grid-sizer {
     width: 50%;
     padding: 5px;
+    max-width: 409px;
   }
 }
 
@@ -657,7 +660,7 @@ text-align: left;
      #right-container
      {
        float: right;
-       width: 88%;
+       width: 85%;
        padding-top: 15px;
        position: relative;
      }
