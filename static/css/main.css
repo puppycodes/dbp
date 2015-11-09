@@ -223,6 +223,13 @@ line-height: 1.5;
   }
 }
 
+@media only screen and (min-width : 1555px) {
+  .grid-item,
+  .grid-sizer {
+    max-width: 600px;
+    padding: 5px;
+  }
+}
 
 
 /* ----- chocolat slider ---- */
@@ -650,7 +657,7 @@ text-align: left;
      #right-container
      {
        float: right;
-       width: 80%;
+       width: 88%;
        padding-top: 15px;
        position: relative;
      }
@@ -697,7 +704,7 @@ text-align: left;
      #right-container
      {
        float: right;
-       width: 80%;
+       width: 88%;
        padding-top: 15px;
        position: relative;
      }
@@ -726,4 +733,17 @@ text-align: left;
       display: none !important;
     }
 
+   }
+
+
+   @media only screen and (min-width : 1430px) {
+     .grid-item,
+     .grid-sizer {
+       max-width: 409px;
+       padding: 5px;
+     }
+
+     #right-container {
+       width: 90%;
+     }
    }
