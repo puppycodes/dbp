@@ -427,8 +427,16 @@ figcaption {
   color: black;
 }
 
-#instafeed {
+.instafeed-wrapper {
+  display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
 
+}
+
+#instafeed {
+pointer-events: none;
 }
 
 #instafeed img {
