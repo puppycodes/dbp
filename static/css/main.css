@@ -740,10 +740,10 @@ text-align: left;
    }
 
 
-   @media only screen and (min-width : 1430px) {
+   @media only screen and (min-width : 1370px) {
      .grid-item,
      .grid-sizer {
-       max-width: 409px;
+       max-width: 395px;
        padding: 5px;
      }
 
