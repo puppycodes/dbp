@@ -44,7 +44,7 @@
 <div class="post">
   <a class="post-title" href="{{ url(object) }}">{{ object.name }} </a>
   <span class="publish-date">{{ object.publish_date|date('F d Y'); }}</span>
-  <a href="{{ url(object) }}"><img class="img-responsive" src="{{ object.cover_image|imageCrop(800, 800) }}"></a>
+  <a href="{{ url(object) }}"><img class="img-responsive" src="{{ object.cover_image|imageCrop() }}"></a>
 </div>
     {% endfor %}
       {% include "templates/partials/paginator.html" %}
