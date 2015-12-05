@@ -129,11 +129,11 @@ line-height: 1.5;
 
 .noscroll {
   overflow-y: hidden;
-  padding-right: 15px;
+  /*padding-right: 15px;*/
 }
 
 .noscroll .icon {
-  right: 30px;
+/*  right: 30px;*/
 }
 
 /* ---- grid ---- */
