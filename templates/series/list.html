@@ -7,6 +7,7 @@
 
 {% block content %}
   {% set data = cms.series %}
+  {% set data = data|sort('publish_date', true) %}
 
 
   <div class="list-grid">

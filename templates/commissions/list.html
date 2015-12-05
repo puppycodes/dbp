@@ -21,6 +21,7 @@
 
   {# The first thing we do is call commissions data from the CMS. #}
   {% set data = cms.commissions %}
+  {% set data = data|sort('publish_date', true) %}
 
   <div class="list-grid">
       {% for object in data %}
