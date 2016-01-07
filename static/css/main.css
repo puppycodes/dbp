@@ -203,7 +203,7 @@ line-height: 1.5;
 @media only screen and (min-width : 992px) {
   .grid-item,
   .grid-sizer {
-    width: 50%;
+    width: 33.33%;
     padding: 5px;
     max-width: 409px;
   }
@@ -212,7 +212,7 @@ line-height: 1.5;
 @media only screen and (min-width : 1200px) {
   .grid-item,
   .grid-sizer {
-    width: 50%;
+    width: 33.33%;
     padding: 5px;
     max-width: 409px;
   }
