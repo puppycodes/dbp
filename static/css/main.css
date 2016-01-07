@@ -404,8 +404,12 @@ display: block;
 }
 
 .news-full-post img {
-width: 100%;
-max-width: 600px;
+width: auto;
+max-height: 600px;
+}
+
+.news-full-post figure[data-type=image] img {
+    width: auto;
 }
 
 
