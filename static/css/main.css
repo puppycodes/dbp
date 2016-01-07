@@ -406,6 +406,7 @@ display: block;
 .news-full-post img {
 width: auto;
 max-height: 600px;
+max-width: 700px;
 }
 
 .news-full-post figure[data-type=image] img {
