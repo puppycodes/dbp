@@ -20,7 +20,8 @@
 
 <div class="menu">
 <ul>
-  <!-- <li ><a {% if page_class == 'selectedwork' %} class="active"{% endif %} href="{{ url('selectedwork') }}">Selected Work</a></li> -->
+
+  <li {% if getCurrentUrl() == '/' %}class="active"{% endif %}><a href="/">Overview</a></li>
   <li class="expand {%if page_class == 'series' %} hard-open{% endif %}" ><span class="submenu-title fake-a">Series <span class="plus">+</span></span>
   	{% set seriesdata = cms.series %}
 		<ul class="submenu">

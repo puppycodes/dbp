@@ -66,7 +66,6 @@ $(function () {
       })
       new_slice.addClass('visible');
       masonry_container.removeClass('init');
-      console.log('loaded', index, 'through', end, 'of', max, 'moving on..');
       index = index + increment;
       if (end < max) {
         load_images();
@@ -162,9 +161,7 @@ function ul_heights() {
   $('.expand .submenu-title').click(function() {
     var menu = $(this).parent();
     var submenu = menu.find('.submenu');
-    console.log(submenu);
     var sub_height = submenu.attr('data-open-height') + "px";
-    console.log(submenu, sub_height);
     if (menu.hasClass('open') || menu.hasClass('hard-open')) {
       menu.removeClass('open hard-open');
       submenu.css('height', 0);
