@@ -8,12 +8,52 @@
 </div>
 
 {% block menu %}
-<div class="menu">
-<ul>
-  <li ><a {% if page_class == 'selectedwork' %} class="active"{% endif %} href="{{ url('selectedwork') }}">Selected Work</a></li>
+
+<!-- <div class="mobilenav">
   <li ><a {% if page_class == 'series' %} class="active"{% endif %} href="{{ url('series') }}">Series</a></li>
   <li ><a {% if page_class == 'commissions' %} class="active"{% endif %} href="{{ url('commissions') }}">Commissions</a></li>
   <li ><a {% if page_class == 'video' %} class="active"{% endif %}href="{{ url('video') }}">Video</a></li>
+  <li ><a {% if page_class == 'information' %}class="active"{% endif %} href="{{ url('information') }}">Information</a></li>
+  <li ><a {% if page_class == 'news' %}class="active"{% endif %} href="{{ url('news') }}">News</a></li>
+</div>
+ -->
+
+<div class="menu">
+<ul>
+  <!-- <li ><a {% if page_class == 'selectedwork' %} class="active"{% endif %} href="{{ url('selectedwork') }}">Selected Work</a></li> -->
+  <li class="expand {%if page_class == 'series' %} hard-open{% endif %}" ><span class="submenu-title fake-a">Series <span class="plus">+</span></span>
+  	{% set seriesdata = cms.series %}
+		<ul class="submenu">
+			{% for object in seriesdata|sort("publish_date") %}
+			  {% if object.visible %}
+					<li {% if getCurrentUrl() == url(object) %}class="active"{% endif %}><a href="{{ url(object) }}">{{ object.name }}</a></li>
+			  {% endif %}
+			{% endfor %}
+		</ul>
+  </li>
+
+  <li class="expand {%if page_class == 'commissions' %} hard-open{% endif %}" ><span class="submenu-title fake-a">Commissions <span class="plus">+</span></span>
+  	{% set seriesdata = cms.commissions %}
+		<ul class="submenu">
+			{% for object in seriesdata|sort("publish_date") %}
+			  {% if object.visible %}
+					<li {% if getCurrentUrl() == url(object) %}class="active"{% endif %}><a href="{{ url(object) }}">{{ object.name }}</a></li>
+			  {% endif %}
+			{% endfor %}
+		</ul>
+  </li>
+
+  <li class="expand {%if page_class == 'video' %} hard-open{% endif %}" ><span class="submenu-title fake-a">Video <span class="plus">+</span></span>
+  	{% set seriesdata = cms.video %}
+		<ul class="submenu">
+			{% for object in seriesdata|sort("publish_date") %}
+			  {% if object.visible %}
+					<li {% if getCurrentUrl() == url(object) %}class="active"{% endif %}><a href="{{ url(object) }}">{{ object.name }}</a></li>
+			  {% endif %}
+			{% endfor %}
+		</ul>
+  </li>
+
   <li ><a {% if page_class == 'information' %}class="active"{% endif %} href="{{ url('information') }}">Information</a></li>
   <li ><a {% if page_class == 'news' %}class="active"{% endif %} href="{{ url('news') }}">News</a></li>
 </ul>

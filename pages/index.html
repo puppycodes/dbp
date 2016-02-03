@@ -8,11 +8,26 @@
 
 {% block content %}
 
+<div class="grid init">
+  <div class="chocolat-parent" data-chocolat-title="">
+    <div class="grid-sizer"></div>
 
+    {% for image in cms.selectedwork.gallery %}
+    <div class="grid-item lazyload lazypreload img-responsive" data-expand="-110">
+      <a class="chocolat-image" href="{{ image|imageSize(800) }}" title="{{image.caption}}">
+       <img class="image-item" lazy-src="{{ image|imageSize(800) }}" />
+      </a>
+    </div>
+    {% endfor %}
 
-<div class="front-image">
-  <img class="img-responsive" src="{{ cms.homepage.image|imageSize(800) }}" />
+    <div class="loading-spinner"></div>
+  </div>
 </div>
+
+
+<!-- <div class="front-image">
+  <img class="img-responsive" src="{{ cms.homepage.image|imageSize(800) }}" />
+</div> -->
 
 
 {% endblock %}

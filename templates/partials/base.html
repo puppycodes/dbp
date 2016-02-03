@@ -42,8 +42,7 @@
     <link rel="stylesheet" href="/static/css/chocolat.css"/>
     <link rel="stylesheet" href="/static/css/hamburgler.css"/>
     <!-- endbuild -->
-
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
     {# Useful block for loading outside scripts in other pages. #}
     {% block head_extra %}{% endblock %}
@@ -58,16 +57,7 @@
     <body {% if page_class %}class="{{ page_class }}"{% endif %}>
     {% block body %}
 
-    <div class="mobilenav">
-      <li ><a {% if page_class == 'selectedwork' %} class="active"{% endif %} href="{{ url('selectedwork') }}">Selected Work</a></li>
-      <li ><a {% if page_class == 'series' %} class="active"{% endif %} href="{{ url('series') }}">Series</a></li>
-      <li ><a {% if page_class == 'commissions' %} class="active"{% endif %} href="{{ url('commissions') }}">Commissions</a></li>
-      <li ><a {% if page_class == 'video' %} class="active"{% endif %}href="{{ url('video') }}">Video</a></li>
-      <li ><a {% if page_class == 'information' %}class="active"{% endif %} href="{{ url('information') }}">Information</a></li>
-      <li ><a {% if page_class == 'news' %}class="active"{% endif %} href="{{ url('news') }}">News</a></li>
-</div>
-
-<a href="javascript:void(0)" class="icon">
+<a href="javascript:void(0)" class="menu-icon">
   <div class="hamburger">
   <div class="menui top-menu"></div>
   <div class="menui mid-menu"></div>
